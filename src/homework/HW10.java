@@ -14,7 +14,7 @@ public class HW10 {
                 return "Лишние пробелы удалены";//если не одинаковые
             }
         }
-        return "Строка пустая";//если строка пустая
+        return "Строка пустая";//если строка пустая ""
     }
 
     public static String task2RemoveAllA(String str) {
@@ -28,25 +28,30 @@ public class HW10 {
         return "Smt went wrong. Invalid string provided.";
     }
 
-    public static String task3RemoveAllZeros (String str) {
-       if (str != null && !str.isEmpty()) { //проверка строки на валидность не налл и не пустая
+    public static String task3RemoveAllZeros(String str) {
+        if (str != null && !str.isEmpty()) { //проверка строки на валидность не налл и не пустая
 
-           return str
-                 .trim() //на всякий случай
-                 .replace(" ", "")
-                 .replace("0", "");
-       }
+            return str
+                    .trim() //на всякий случай
+                    .replace(" ", "")
+                    .replace("0", "");
+        }
         return "Smt went wrong. Invalid string provided.";
     }
 
-    public static String task4RemoveAllSpaces (String str){
-        if (str != null && !str.isEmpty()) {
+    public static String task4RemoveAllSpaces(String str) {
+        if (str != null) {
+            if (!str.isEmpty()) { //if valid string
 
-            return str
-                    .trim()
-                    .replace(" ", "");
+                return str
+                        .trim()
+                        .replace(" ", "");
+            } else {
+
+                return str; //if ""
+            }
         }
-        return "Smt went wrong. Invalid string provided.";
+        return "Smt went wrong."; //if null
     }
 
 
@@ -65,6 +70,7 @@ public class HW10 {
          “” → “Строка пустая”
          */
         printTaskNumber(1, 1);
+
         String str1 = " QA4Everyone ";
         String str2 = "QA4Everyone";
         String str3 = null;
@@ -72,8 +78,8 @@ public class HW10 {
 
         System.out.println(task1SpaceDelete(str1));
         System.out.println(task1SpaceDelete(str2));
-        System.out.println(task1SpaceDelete(str3));
         System.out.println(task1SpaceDelete(str4));
+        System.out.println(task1SpaceDelete(str3));
 
         line();
 
@@ -93,8 +99,10 @@ public class HW10 {
 
         System.out.println(task2RemoveAllA(str1));
         System.out.println(task2RemoveAllA(str2));
-        System.out.println(task2RemoveAllA(str3));
         System.out.println(task2RemoveAllA(str4));
+        System.out.println(task2RemoveAllA(str3));
+
+        line();
 
         /**3.
          * Написать алгоритм RemoveAllZeros.
@@ -114,9 +122,10 @@ public class HW10 {
 
         System.out.println(task3RemoveAllZeros(str1));
         System.out.println(task3RemoveAllZeros(str2));
-        System.out.println(task3RemoveAllZeros(str3));
         System.out.println(task3RemoveAllZeros(str4));
+        System.out.println(task3RemoveAllZeros(str3));
 
+        line();
 
         /**4.
          * Написать алгоритм RemoveAllSpaces.
@@ -133,14 +142,12 @@ public class HW10 {
         str3 = null;
         str4 = "";
 
-
         System.out.println(task4RemoveAllSpaces(str1));
         System.out.println(task4RemoveAllSpaces(str2));
-        System.out.println(task4RemoveAllSpaces(str3));
         System.out.println(task4RemoveAllSpaces(str4));
+        System.out.println(task4RemoveAllSpaces(str3));
 
-
-
+        line();
 
     }
 }
