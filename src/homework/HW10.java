@@ -18,14 +18,18 @@ public class HW10 {
     }
 
     public static String task2RemoveAllA(String str) {
-        if (str != null && !str.isEmpty()) { //проверка строки на валидность не налл и не пустая
+        if (str != null) {
+            if (!str.isEmpty()) { //проверка строки что не пустая
 
-            return str
-                    .trim()
-                    .replace("a", "");
+                return str
+                        .trim()
+                        .replace("a", "");
+            } else {
+
+                return str;
+            }
         }
-
-        return "Smt went wrong. Invalid string provided.";
+        return "Smt went wrong."; //если null
     }
 
     public static String task3RemoveAllZeros(String str) {
