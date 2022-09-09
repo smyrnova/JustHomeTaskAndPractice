@@ -29,13 +29,19 @@ public class HW10 {
     }
 
     public static String task3RemoveAllZeros(String str) {
-        if (str != null && !str.isEmpty()) { //проверка строки на валидность не налл и не пустая
+        if (str != null) {
+            if (!str.isEmpty()) {
 
-            return str
-                    .trim() //на всякий случай
-                    .replace(" ", "")
-                    .replace("0", "");
+                return str
+                        .trim() //трим быстрее убере пробелы в конце и начале чем риплейс
+                        .replace(" ", "")
+                        .replace("0", "");
+            } else {
+
+                return str;
+            }
         }
+
         return "Smt went wrong. Invalid string provided.";
     }
 
