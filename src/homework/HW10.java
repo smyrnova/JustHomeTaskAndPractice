@@ -69,6 +69,23 @@ public class HW10 {
         return "Smt went wrong."; //if null
     }
 
+    public static int task5CountAa(String str) {
+        int count = 0;
+        if (str != null) {
+            if (!str.isEmpty()) {
+                for (int i = 0; i < str.length(); i++) {
+                    if (str.charAt(i) == 'a' || str.charAt(i) == 'A') {
+                        count = count + 1;
+                    }
+                }
+
+                return count;
+            }
+        }
+
+        return count;
+    }
+
 
     public static void main(String[] arg) {
         /** Написать метод, который принимает на вход строку.
@@ -163,6 +180,25 @@ public class HW10 {
         System.out.println(task4RemoveAllSpaces(str3));
 
         line();
+
+        /**5.
+         * Напишите метод, который принимает на вход строку и считает, сколько букв а или А содержится в строке.
+         * Test Data:
+         * “Abracadabra” → 5
+         * “Homenum Revelio” → 0
+         */
+
+        printTaskNumber(2, 5);
+
+        str1 = "Abracadabra";
+        str2 = "Homenum Revelio";
+        str3 = null;
+        str4 = "";
+
+        System.out.println(task5CountAa(str1));
+        System.out.println(task5CountAa(str2));
+        System.out.println(task5CountAa(str4));
+        System.out.println(task5CountAa(str3));
 
     }
 }
