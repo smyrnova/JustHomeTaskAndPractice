@@ -1,5 +1,7 @@
 package homework;
 
+import java.util.Locale;
+
 import static utils.Utils.*; //импорт чтоб юзать методы из класса Utils
 
 public class HW10 {
@@ -114,6 +116,24 @@ public class HW10 {
             }
         }
         return "Smt went wrong."; //если null
+    }
+
+    public static String task8WrongStrToRightStr(String str) {
+        if (str != null) {
+            if (!str.isEmpty()) {
+                str.trim();
+                str = str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+                //реобразовываем первый символ в верхний регистр и соединяем его с оставшейся строкой str.substring(1) со второй буквы.
+
+                return str;
+
+            } else {
+
+                return "Empty string provided";
+            }
+        }
+
+        return "Smt. went wrong.";
     }
 
 
@@ -305,6 +325,26 @@ public class HW10 {
         System.out.println(task7Concat(str2));
         System.out.println(task7Concat(str4));
         System.out.println(task7Concat(str3));
+
+        line();
+
+        /**8.
+         * Напишите метод, кторый принимает на вход название города и исправляет написание:
+         * Test Data:
+         * “ташкент” → “Ташкент”
+         * “ЧикаГО” → “Чикаго”
+         */
+        printTaskNumber(2, 8);
+
+        str1 = "ташкент";
+        str2 = "ЧикаГО";
+        str3 = null;
+        str4 = "";
+
+        System.out.println(task8WrongStrToRightStr(str1));
+        System.out.println(task8WrongStrToRightStr(str2));
+        System.out.println(task8WrongStrToRightStr(str4));
+        System.out.println(task8WrongStrToRightStr(str3));
 
 
     }
