@@ -1,6 +1,5 @@
 package homework;
 
-import java.util.Locale;
 
 import static utils.Utils.*; //импорт чтоб юзать методы из класса Utils
 
@@ -86,6 +85,21 @@ public class HW10 {
         }
 
         return count;
+    }
+
+    public static int task5_1CountA(String str) { //способ лучше.
+        if (str != null) {
+            if (!str.isEmpty()) {
+                return str.length() - str   //от длины строки отнимаем длину этой же строки но уже с замененными буквами а на пустоту.
+                        .toLowerCase()
+                        .replace("a", "")
+                        .length();
+            } else {
+
+                return 0; //if ""
+            }
+        }
+        return 0; //if null
     }
 
     public static boolean task6FindWord(String str) {
@@ -249,6 +263,11 @@ public class HW10 {
         System.out.println(task5CountAa(str2));
         System.out.println(task5CountAa(str4));
         System.out.println(task5CountAa(str3));
+        line();
+        System.out.println(task5_1CountA(str1));
+        System.out.println(task5_1CountA(str2));
+        System.out.println(task5_1CountA(str4));
+        System.out.println(task5_1CountA(str3));
 
         line();
 
