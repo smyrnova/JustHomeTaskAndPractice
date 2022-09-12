@@ -157,6 +157,11 @@ public class HW10 {
                 if (str.contains(letter)) {
 
                     return str.substring(str.indexOf(letter), str.lastIndexOf(letter) + 1);
+                    /**сабстринг возвращает часть строки(ввиде букв) но нужны индексы с корого по который отображать,
+                     * индексы достаем с indexOf и lastIndexOf, но обавляем +1 потому что в сабстринг второй параметр
+                     *не включается в отображение.
+                     */
+
                 } else {
 
                     return "There is no such letter";
