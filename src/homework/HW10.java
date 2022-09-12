@@ -391,6 +391,7 @@ public class HW10 {
          * “Abracadabra”, “b” → “bracadab”
          * “Whippersnapper”, “p” → “ppersnapp”
          */
+        printTaskNumber(2, 9);
 
         str1 = "Abracadabra";
         str2 = "Whippersnapper";
@@ -402,6 +403,8 @@ public class HW10 {
         System.out.println(task9(str2, "p"));
         System.out.println(task9(str4, "b")); //empty
         System.out.println(task9(str3, "b")); //null
+
+        line();
 
 
     }
