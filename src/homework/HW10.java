@@ -136,10 +136,9 @@ public class HW10 {
         if (str != null) {
             if (!str.isEmpty()) {
                 str.trim();
-                str = str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
-                //реобразовываем первый символ в верхний регистр и соединяем его с оставшейся строкой str.substring(1) со второй буквы.
+                //преобразовываем первый символ в верхний регистр и соединяем его concat с оставшейся строкой str.substring(1) со второй буквы.
 
-                return str;
+                return str.substring(0, 1).toUpperCase().concat(str.substring(1).toLowerCase());
 
             } else {
 
@@ -150,6 +149,25 @@ public class HW10 {
         return "Smt. went wrong.";
     }
 
+    //9
+
+    public static String task9(String str, String letter) {
+        if (str != null) {
+            if (!str.isEmpty()) {
+                if (str.contains(letter)) {
+
+                    return str.substring(str.indexOf(letter), str.lastIndexOf(letter) + 1);
+                } else {
+
+                    return "There is no such letter";
+                }
+            }
+
+            return "Empty string provided";
+        }
+
+        return "Smt. went wrong.";
+    }
 
     public static void main(String[] arg) {
         /** Написать метод, который принимает на вход строку.
@@ -364,6 +382,26 @@ public class HW10 {
         System.out.println(task8WrongStrToRightStr(str2));
         System.out.println(task8WrongStrToRightStr(str4));
         System.out.println(task8WrongStrToRightStr(str3));
+
+        line();
+
+        /**9.
+         * Напишите метод, который принимает на вход строку и букву-параметр, и возвращает все, что находится между первой и последней буквой-параметром:
+         * Test Data:
+         * “Abracadabra”, “b” → “bracadab”
+         * “Whippersnapper”, “p” → “ppersnapp”
+         */
+
+        str1 = "Abracadabra";
+        str2 = "Whippersnapper";
+        str3 = null;
+        str4 = "";
+
+        System.out.println(task9(str1, "b"));
+        System.out.println(task9(str1, "x")); //no such letter
+        System.out.println(task9(str2, "p"));
+        System.out.println(task9(str4, "b")); //empty
+        System.out.println(task9(str3, "b")); //null
 
 
     }
